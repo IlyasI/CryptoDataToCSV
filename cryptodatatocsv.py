@@ -4,7 +4,6 @@
 from crycompare import History, Social, News
 import csv
 import json
-import pandas as pd
 import io
 
 def news_to_csv(firstRun=True):
