@@ -134,21 +134,3 @@ def daily_to_csv(crypto, exchangeCurrency='USD'):
             count += 1
         dailyWriter.writerow(data.values())
     dailyDataFile.close
-
-def xmr_minute_to_csv(dataPoints=1440, firstRun=False, exchangeCurrency='USD'):
-    '''Minute Data (XMR to USD) JSON to CSV, minute data is only stored for 7 days on CryptoCompare
-    set parameter dataPoints to 1440 for minute data over a period of 24 hours, useful
-    if used for a scheduler task. the max for dataPoints is 2000.
-    If this is the first run, set firstRun argument to True
-    Currency default is USD'''
-    minute_to_csv(dataPoints=dataPoints, firstRun=firstRun, exchangeCurrency=exchangeCurrency, crypto='XMR')
-
-def xmr_hourly_to_csv(dataPoints, exchangeCurrency='USD'):
-    '''Hourly Data (XMR) JSON to CSV, 2000 is the max for the datapoints parameter: stretching back
-    83.33 days. Set to 24 to run as a daily task.'''
-    hourly_to_csv(dataPoints=dataPoints, crypto='XMR', exchangeCurrency=exchangeCurrency)
-
-def xmr_daily_to_csv(exchangeCurrency='USD'):
-    '''Daily Data (XMR) JSON to CSV, downloads all daily data available.
-    '''
-    daily_to_csv(crypto='XMR', exchangeCurrency=exchangeCurrency)
