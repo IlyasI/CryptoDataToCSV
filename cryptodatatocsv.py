@@ -1,10 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from crycompare import History, Social, News
+from crycompare import Price, History, Social, News
 import csv
 import json
 import io
+
+
+#Prints cryptocompare ID for your CryptoCurrency.
+def coinid_to_csv(Crypto) :
+    '''Enter parameter Crypto as a three letter cryptocurrency abbreviation string,
+    Example: coinid_to_csv("BTC") or coinid_to_csv("XMR")'''
+
+    priceTemp = Price
+    listResponse = priceTemp().coinList()
+    coinid = listResponse["Data"][Crypto]["Id"]
+    print(coinid)
+
 
 def news_to_csv(firstRun=True):
     newsTemp = News
@@ -94,8 +106,6 @@ def minute_to_csv(crypto, dataPoints, firstRun=False, exchangeCurrency='USD'):
             count += 1
         minuteWriter.writerow(data.values())
     minuteDataFile.close()
-
-minute_to_csv('BTC', 1440, firstRun=True)
 
 def hourly_to_csv(dataPoints, crypto, exchangeCurrency='USD'):
     '''Hourly Data JSON to CSV, 2000 is the max for the datapoints parameter: stretching back
