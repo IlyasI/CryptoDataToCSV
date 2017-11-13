@@ -33,7 +33,7 @@ The maximum dataPoints per API call is 2000 (A CryptoCompare limitation).
 ___
 
 Powered by the CryptoCompare API.
-Uses a modified version of the [cryCompare](https://github.com/stefs304/cryCompare) Python wrapper for the CryptoCompare API.
+Uses a modified version of the [cryCompare](https://github.com/stefs304/cryCompare) Python wrapper for the CryptoCompare API by stefs304.
 
 cryptodatatocsv.py functions take the JSON responses returned by the CryptoCompare API and save them to appropriately named .csv files.
 I am planning to use the data from this project to explore deep learning applications in cryptocurrency trading.
